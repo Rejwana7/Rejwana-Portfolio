@@ -10,7 +10,9 @@ full-stack web development.
 
 ## Live Portfolio
 
-The public deployment link will be added here after deployment.
+**Live Website:** [https://rejwana7.github.io/Rejwana-Portfolio/](https://rejwana7.github.io/Rejwana-Portfolio/)
+
+
 
 ## About Me
 
