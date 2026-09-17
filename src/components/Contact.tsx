@@ -5,6 +5,8 @@ import { Mail, Phone, MapPin, Send, CheckCircle2, Copy, AlertCircle, LoaderCircl
 import { GithubIcon, LinkedinIcon } from "./SocialIcons";
 import confetti from "canvas-confetti";
 
+const isStaticGitHubPagesBuild = Boolean(process.env.NEXT_PUBLIC_BASE_PATH);
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -14,7 +16,7 @@ export default function Contact() {
     website: "",
   });
 
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "email-client" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [copied, setCopied] = useState(false);
 
@@ -32,6 +34,17 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
     setErrorMessage("");
+
+    if (isStaticGitHubPagesBuild) {
+      const emailSubject = encodeURIComponent(`[Portfolio Contact] ${formData.subject}`);
+      const emailBody = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
+      );
+
+      setStatus("email-client");
+      window.location.href = `mailto:${emailAddress}?subject=${emailSubject}&body=${emailBody}`;
+      return;
+    }
 
     try {
       const response = await fetch("/api/contact", {
@@ -186,6 +199,13 @@ export default function Contact() {
                 <div className="mb-6 p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-sm flex items-center gap-3 animate-in fade-in duration-300">
                   <CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-400" />
                   <span>Thank you! Your message was sent successfully.</span>
+                </div>
+              )}
+
+              {status === "email-client" && (
+                <div className="mb-6 p-4 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-200 text-sm flex items-center gap-3" role="status">
+                  <Mail className="w-5 h-5 shrink-0 text-cyan-400" />
+                  <span>Your email app is opening with the message ready to send.</span>
                 </div>
               )}
 

@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+const publicBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export default function About() {
   return (
     <section id="about" className="py-20 relative bg-slate-950/60 border-t border-b border-white/5">
@@ -33,7 +35,7 @@ export default function About() {
               <div className="relative w-full h-full rounded-full p-1.5 bg-gradient-to-tr from-cyan-500/50 via-indigo-500/30 to-purple-500/50 shadow-2xl">
                 <div className="relative w-full h-full rounded-full overflow-hidden bg-slate-900 border-2 border-slate-800">
                   <Image
-                    src="/rejwana-photo.jpg"
+                    src={`${publicBasePath}/rejwana-photo.jpg`}
                     alt="Rejwana Tabassum"
                     fill
                     sizes="(max-width: 640px) 224px, 256px"

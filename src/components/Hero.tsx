@@ -1,16 +1,17 @@
 ﻿"use client";
 
 import { useState, useEffect } from "react";
-import { Download, Mail, Sparkles, CheckCircle, Terminal, Bug, Code2, Play, CheckCircle2, ShieldCheck } from "lucide-react";
+import { Download, Mail, Sparkles, Code2, Play, CheckCircle2, ShieldCheck } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./SocialIcons";
 
-export default function Hero() {
-  const roles = [
-    "Software QA Engineer",
-   "Full-Stack Developer",
-    "Computer Science Graduate",
-  ]
+const publicBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const roles = [
+  "Software QA Engineer",
+  "Full-Stack Developer",
+  "Computer Science Graduate",
+];
 
+export default function Hero() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -39,7 +40,7 @@ export default function Hero() {
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, currentRoleIndex, typingSpeed, roles]);
+  }, [displayText, isDeleting, currentRoleIndex, typingSpeed]);
 
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 overflow-hidden">
@@ -61,7 +62,7 @@ export default function Hero() {
             {/* Name Heading */}
             <div className="space-y-2">
               <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                Hi, I'm <br className="hidden sm:inline" />
+                Hi, I&apos;m <br className="hidden sm:inline" />
                 <span className="text-gradient-cyan">Rejwana Tabassum</span>
               </h1>
               
@@ -85,7 +86,7 @@ export default function Hero() {
             {/* CTA Buttons & Socials */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <a
-                href="/Rejwana_CV_SQA_Developer.pdf"
+                href={`${publicBasePath}/Rejwana_CV_SQA_Developer.pdf`}
                 download="Rejwana_CV_SQA_Developer.pdf"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
               >
@@ -157,7 +158,7 @@ export default function Hero() {
 
                 {/* Code Content */}
                 <div className="p-5 space-y-2 text-slate-300 leading-relaxed overflow-x-auto">
-                  <div className="text-slate-500 italic">// Software QA & Full-Stack Profile</div>
+                  <div className="text-slate-500 italic">{"// Software QA & Full-Stack Profile"}</div>
                   <p>
                     <span className="text-purple-400">const</span> <span className="text-sky-300">engineer</span> = &#123;
                   </p>
