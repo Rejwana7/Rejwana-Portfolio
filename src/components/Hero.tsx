@@ -85,8 +85,8 @@ export default function Hero() {
             {/* CTA Buttons & Socials */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <a
-                href="/Rejwana_Tabassum_CV.pdf"
-                download="Rejwana_Tabassum_CV.pdf"
+                href="/Rejwana_CV_SQA_Developer.pdf"
+                download="Rejwana_CV_SQA_Developer.pdf"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Download className="w-5 h-5" />

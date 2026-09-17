@@ -66,8 +66,8 @@ export default function Navbar() {
           {/* Resume CTA & Status */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="/Rejwana_Tabassum_CV.pdf"
-              download="Rejwana_Tabassum_CV.pdf"
+              href="/Rejwana_CV_SQA_Developer.pdf"
+              download="Rejwana_CV_SQA_Developer.pdf"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/35 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <Download className="w-4 h-4" />
@@ -103,8 +103,8 @@ export default function Navbar() {
           ))}
           <div className="pt-4 border-t border-white/10">
             <a
-              href="/Rejwana_Tabassum_CV.pdf"
-              download="Rejwana_Tabassum_CV.pdf"
+              href="/Rejwana_CV_SQA_Developer.pdf"
+              download="Rejwana_CV_SQA_Developer.pdf"
               className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 shadow-lg shadow-cyan-500/20"
             >
               <Download className="w-4 h-4" />
