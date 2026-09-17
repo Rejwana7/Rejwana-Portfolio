@@ -10,7 +10,7 @@ full-stack web development.
 
 ## Live Portfolio
 
-**Live Website:** [https://rejwana7.github.io/Rejwana-Portfolio/](https://rejwana7.github.io/Rejwana-Portfolio/)
+**Live Website:** [https://rejwana-portfolio.vercel.app/](https://rejwana-portfolio.vercel.app/)
 
 
 
